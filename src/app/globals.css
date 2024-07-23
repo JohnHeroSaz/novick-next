@@ -87,12 +87,13 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+    background-color: ghostwhite;
 }
 
 a {
@@ -100,8 +101,54 @@ a {
   text-decoration: none;
 }
 
+button[class*="Mui"]:focus {
+  outline: none !important;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+/* Navigation swiper button custom start */
+.swiper-button-prev {
+  left: 3% !important;
+  background-image: url("/assets/icon-left.png") !important;
+  background-repeat: no-repeat;
+  width: 55px !important;
+  height: 45px !important;
+}
+
+.swiper-button-next {
+  right: 3% !important;
+  background-image: url("/assets/icon-right.png") !important;
+  background-repeat: no-repeat;
+  width: 55px !important;
+  height: 50px !important;
+}
+/* Navigation swiper button custom end */
+
+/* Navigation swiper font custom start */
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: '' !important;
+}
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: '' !important;
+}
+/* Navigation swiper font custom end */
+
+.swiper-wrapper {
+  height: 94% !important;
+}
+
+@media (max-width: 430px) {
+  .swiper-wrapper {
+    height: 90% !important;
+  }
+
+  .swiper_swiper{
+    height: 286px;
   }
 }

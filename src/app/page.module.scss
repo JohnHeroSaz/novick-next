@@ -1,0 +1,97 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+  }
+  
+  .header, .footer {
+    background: #f0f0f0;
+    padding: 1rem;
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .menu-button {
+    display: block;
+  }
+  
+  .nav-link {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .welcome-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .promo {
+    margin-top: 2rem;
+  }
+  
+  .footer-links, .social-media {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  
+  .footer-links a, .social-media a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .app-bar {
+    background-color: white;
+    color: black;
+  }
+  
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f0f0f0;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-media {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer-links a, .social-media a {
+    margin: 0 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .nav {
+      display: flex;
+    }
+    .menu-button {
+      display: none;
+    }
+  }

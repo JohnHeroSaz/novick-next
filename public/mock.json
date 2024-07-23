@@ -1,0 +1,33 @@
+{
+    "header": {
+      "logoImage": "/assets/novickLogo.png",
+      "logoHomeLink": "https://novickcorp.com/",
+      "headerLinks": [
+        { "name": "Home", "url": "/", "icon":"/assets/Container.svg" },
+        { "name": "Order Management", "url": "/order-management", "icon":"/assets/order.svg" },
+        { "name": "Payments", "url": "/payments", "icon":"/assets/pay.svg" }
+      ]
+    },
+    "mainContent": {
+      "promoSpace": {
+        "promoTitle":"De Finibus Bonorum et Malorum",
+        "promoDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti, atque corrupti quos dolores et quas molestias.",
+        "promoButton": "Order Now"
+      },
+      "carousel": [
+        {"image":"/assets/item-1.png", "alt":"Image 2", "ctaUrl": "https://novickcorp.com/"},
+        {"image":"/assets/img1.png", "alt":"Image 1", "ctaUrl": "https://novickcorp.com/services"},
+        {"image":"/assets/img3.jpg", "alt":"Image 3", "ctaUrl": "https://novickcorp.com/products"},
+        {"image":"/assets/img3.jpg", "alt":"Image 3", "ctaUrl": "https://novickcorp.com/products"}
+      ]
+    },
+    "footer": {
+      "footerLinks": [
+        { "name": "Terms & Privacy", "url": "/terms"}
+      ],
+      "address": "1234 Street, City, Country",
+      "logoImage": "/assets/novickLogo.png",
+      "copyright":"Copyright © 2024 Novick Corporation" 
+    }
+  }
+  

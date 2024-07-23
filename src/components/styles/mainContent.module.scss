@@ -1,0 +1,89 @@
+.main-content {
+  padding: 0 3rem;
+}
+
+.promo-space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  position: relative;
+  top: -30px;
+}
+
+.promo-space {
+  margin: 0;
+}
+
+.promo-description {
+  font-size: 18px;
+}
+
+.promo-space button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.promo-space button:hover {
+  background-color: #0056b3;
+}
+
+.promo-img-space {
+  width: 238px;
+  height: 120px;
+  background-color: #ddd;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.promoDescription_position {
+  margin-left: 2rem;
+  max-width: 520px;
+}
+
+@media (max-width: 430px) {
+  .promo-space {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .promo-space button {
+    margin-top: 2rem;
+  }
+
+  .promo-space p {
+    text-align: left;
+  }
+
+  .left-section {
+    flex-wrap: wrap;
+  }
+
+  .promo-img-space {
+    width: 100%;
+  }
+
+  .promo-title {
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: -31px;
+    color:cadetblue;
+  }
+
+  .promo-description {
+    font-size: 10px;
+    margin-top: 20px;
+    margin-left: -31px;
+  }
+}
