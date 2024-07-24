@@ -1,56 +1,75 @@
-import { ReactElement } from "react";
-
 export interface HeaderLink {
-    name: string;
-    url: string;
-    label: string;
-    icon: string;
-  }
-  
-  export interface SocialMediaLink {
-    name: string;
-    icon: string;
-    url: string;
-  }
-  
-  export interface FooterLink {
-    name: string;
-    url: string;
-  }
-  
-  export interface Header {
-    logoImage: string;
-    logoHomeLink: string;
-    headerLinks: HeaderLink[];
-  }
-  
-  export interface PromoSpace {
-    promoTitle: string;
-    promoDescription: string;
-    promoButton: string;
-  }
-  
-  export interface CarouselItem {
-    image: string;
-    alt: string;
-    ctaUrl?: string;
-  }
-  
-  export interface MainContent {
-    promoSpace: PromoSpace;
-    carousel: CarouselItem[];
-  }
-  
-  export interface Footer {
-    footerLinks: FooterLink[];
-    logoImage: string;
-    address: string;
-    copyright: string;
-  }
-  
-  export interface Content {
-    header: Header;
-    mainContent: MainContent;
-    footer: Footer;
-  }
-  
+  id: number;
+  text: string;
+  url: string;
+  icon: string;
+  priority: number;
+}
+
+export interface Header {
+  logoImage: string;
+  logoHomeLink: string;
+  headerLinks: HeaderLink[];
+}
+
+export interface SocialMediaLink {
+  name: string;
+  icon: string;
+  url: string;
+}
+
+export interface PromoSpace {
+  id: number
+  promoTitle: string;
+  promoDescription: string;
+  promoButton: string;
+  promoUrl: "/"
+}
+
+export interface NewsItem {
+  id: number;
+  date: string;
+  priority: number;
+  imageUrl: string;
+  alt: string;
+  isSoloPromo?: boolean;
+}
+
+export interface MainContent {
+  promoSpace?: PromoSpace;
+  news?: NewsItem[];
+  soloNews?: NewsItem;
+}
+
+export interface FooterLink {
+  id: number;
+  text: string;
+  url: string;
+  priority: number;
+}
+
+export interface Address{
+  address: string,
+  city: string,
+  state: string,
+  zipCode: number,
+  phoneNumber: string
+}
+export interface TermsAndPrivacy{
+  text: string;
+  url: string;
+}
+
+export interface Footer {
+  footerLinks: FooterLink[];
+  logoImage: string;
+  copyright: string;
+  address: Address[];
+  termsAndPrivacyLink: TermsAndPrivacy;
+}
+
+export interface Content {
+  header: Header;
+  mainContent: MainContent;
+  footer: Footer;
+}

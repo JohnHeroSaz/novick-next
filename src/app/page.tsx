@@ -6,7 +6,7 @@ import Login from '@/components/layout/login/Login';
 
 const App = () => {
   const { data, showMobileMenu } = useAppLogic();
-  const isLogged = false;
+  const isLogged = true;
 
   if (!data) {
     return <div>Loading...</div>;

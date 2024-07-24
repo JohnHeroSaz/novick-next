@@ -51,6 +51,14 @@
   max-width: 520px;
 }
 
+.main-img {
+  display: block;
+  width: 100%;
+  height: 540px;
+  border-radius: 28px;
+  object-fit: cover;
+}
+
 @media (max-width: 430px) {
   .promo-space {
     display: flex;

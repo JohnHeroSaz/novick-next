@@ -14,7 +14,7 @@ const Carousel = (data: MainContent) => {
   return (
     <>
       <Swiper
-        slidesPerView={1.3}  
+        slidesPerView={1}  
         cssMode={true}
         navigation={true}
         centeredSlides={true}
@@ -24,16 +24,17 @@ const Carousel = (data: MainContent) => {
         modules={[ Navigation ]}
         className={styles.swiper}
       >
-        {data.carousel.map((data, index) => {
+        {data.news?.map((data, index) => {
           return (
             <>
               <SwiperSlide key={index} className={styles['swiper-slide']}>
-                <Image priority={true} src={data.image} alt="" width={600} height={600} className={styles['swiper-img']}/>
+                <Image priority={true} src={data.imageUrl} alt="" width={600} height={600} className={styles['swiper-img']}/>
                 {/* <Button href={data.ctaUrl} variant='contained' sx={{ marginTop: "20rem", position:"absolute" }}>Call to action</Button> */}
               </SwiperSlide>
             </>
           )
-        })}
+        })
+      }
       </Swiper>
     </>
   );

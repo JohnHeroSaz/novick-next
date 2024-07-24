@@ -25,7 +25,6 @@ interface Props {
 }
 
 const NavBar = (props: Props) => {
-
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -41,7 +40,7 @@ const NavBar = (props: Props) => {
         {props.data.headerLinks.map((link, index) => (
           <ListItem key={index} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText>{link.name}</ListItemText>
+              <ListItemText>{link.text}</ListItemText>
             </ListItemButton>
           </ListItem>
         ))}
@@ -73,10 +72,10 @@ const NavBar = (props: Props) => {
               {props.data.headerLinks.map((link, index) => (
                 <Box key={index} sx={{ textAlign: 'center' }}>
                   <Box sx={{marginTop:1}}>
-                    <img src={link.icon} alt={link.name} style={{ display: 'block', margin: '0 auto' }} />
+                    <img src={link.icon} alt={link.text} style={{ display: 'block', margin: '0 auto' }} />
                   </Box>
                   <Button sx={{ color: '#000', display: 'block', }}>   
-                    <Typography textTransform={'capitalize'}>{link.name}</Typography>
+                    <Typography textTransform={'capitalize'}>{link.text}</Typography>
                   </Button>
                 </Box>
               ))}

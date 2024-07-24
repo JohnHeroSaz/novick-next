@@ -14,11 +14,7 @@ const Footer = ({ data }: FooterProps) => {
       </Box>
       <Box className={styles.footerContainer}>
         <Box className={styles['terms-and-privacy']}>
-          {data.footerLinks.map((link, index) => (
-            <a key={index} href={link.url}>
-              {link.name}
-            </a>
-          ))}
+          <a href={data.termsAndPrivacyLink.url}>{data.termsAndPrivacyLink.text}</a>
           <>|</>
         </Box>
         <Box className={styles.copyright}>

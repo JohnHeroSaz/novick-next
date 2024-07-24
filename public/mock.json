@@ -1,33 +1,106 @@
 {
-    "header": {
-      "logoImage": "/assets/novickLogo.png",
-      "logoHomeLink": "https://novickcorp.com/",
-      "headerLinks": [
-        { "name": "Home", "url": "/", "icon":"/assets/Container.svg" },
-        { "name": "Order Management", "url": "/order-management", "icon":"/assets/order.svg" },
-        { "name": "Payments", "url": "/payments", "icon":"/assets/pay.svg" }
-      ]
-    },
-    "mainContent": {
-      "promoSpace": {
-        "promoTitle":"De Finibus Bonorum et Malorum",
-        "promoDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti, atque corrupti quos dolores et quas molestias.",
-        "promoButton": "Order Now"
+  "header": {
+    "logoImage": "/assets/novickLogo.png",
+    "logoHomeLink": "https://novickcorp.com/",
+    "headerLinks": [
+      {
+        "id": 1,
+        "url": "/",
+        "text": "Home",
+        "icon": "/assets/Container.svg",
+        "priority": 1
       },
-      "carousel": [
-        {"image":"/assets/item-1.png", "alt":"Image 2", "ctaUrl": "https://novickcorp.com/"},
-        {"image":"/assets/img1.png", "alt":"Image 1", "ctaUrl": "https://novickcorp.com/services"},
-        {"image":"/assets/img3.jpg", "alt":"Image 3", "ctaUrl": "https://novickcorp.com/products"},
-        {"image":"/assets/img3.jpg", "alt":"Image 3", "ctaUrl": "https://novickcorp.com/products"}
-      ]
+      {
+        "id": 2,
+        "url": "https://www.cutanddry.com/",
+        "text": "Order Management",
+        "icon": "/assets/order.svg",
+        "priority": 2
+      },
+      {
+        "id": 3,
+        "url": "https://www.ftni.com/",
+        "text": "Payments",
+        "icon": "/assets/pay.svg",
+        "priority": 3
+      }
+    ]
+  },
+  "mainContent": {
+    "promoSpace": {
+      "id": 1,
+      "promoTitle": "De Finibus Bonorum et Malorum",
+      "promoDescription": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti, atque corrupti quos dolores et quas molestias.",
+      "promoButton": "Order Now",
+      "promoUrl": "/"
     },
-    "footer": {
-      "footerLinks": [
-        { "name": "Terms & Privacy", "url": "/terms"}
-      ],
-      "address": "1234 Street, City, Country",
-      "logoImage": "/assets/novickLogo.png",
-      "copyright":"Copyright © 2024 Novick Corporation" 
+    "soloNews": {
+      "id": 2,
+      "date": "2024-07-15",
+      "priority": 2,
+      "imageUrl": "https://novickcorp.com/wp-content/uploads/2021/04/children-eating-in-cafeteria.jpg",
+      "alt": "Children Eating in Cafeteria",
+      "isSoloPromo": true
+    },
+    "news": [
+      {
+        "id": 1,
+        "date": "2024-07-15",
+        "priority": 1,
+        "imageUrl": "https://novickcorp.com/wp-content/uploads/2021/02/Novick_Corp_Logo_Horiz_320x100.png",
+        "alt": "Novivk Logo"
+      },
+      {
+        "id": 2,
+        "date": "2024-07-15",
+        "priority": 2,
+        "imageUrl": "https://novickcorp.com/wp-content/uploads/2021/04/children-eating-in-cafeteria.jpg",
+        "alt": "Children Eating in Cafeteria"
+      },
+      {
+        "id": 3,
+        "date": "2024-07-15",
+        "priority": 3,
+        "imageUrl": "https://novickcorp.com/wp-content/uploads/2021/04/truck-driver-in-front-of-delivery-trucks.jpg",
+        "alt": "Truck Drive in Front of Delivery Trucks"
+      }
+    ]
+  },
+  "footer": {
+    "footerLinks": [
+      {
+        "id": 5,
+        "url": "/",
+        "text": "Home",
+        "priority": "1"
+      },
+      {
+        "id": 4,
+        "url": "/",
+        "text": "About",
+        "priority": "2"
+      },
+      {
+        "id": 3,
+        "url": "/",
+        "text": "Contact",
+        "priority": "3"
+      }
+    ],
+    "termsAndPrivacyLink": 
+      {
+        "text": "terms and privacy",
+        "url": "https://novickcorp.com/terms-privacy/"
+      }
+    ,
+    "copyright": "Copyright ©2024 Novick Corporation",
+    "logoImage": "/assets/novickLogo.png",
+    "address": {
+      "address": "3660 S. Lawrence St.",
+      "city": "Philadelphia",
+      "state": "PA",
+      "zipCode": "19148",
+      "phoneNumber": "215.467.1012"
     }
   }
-  
+}
