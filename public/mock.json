@@ -39,25 +39,22 @@
         "id": 1,
         "date": "2024-07-15",
         "priority": 1,
-        "imageUrl": "https://novickcorp.com/wp-content/uploads/2021/02/Novick_Corp_Logo_Horiz_320x100.png",
-        "alt": "Novivk Logo",
-        "isSoloPromo": false
+        "imageUrl": "https://novickcorp.com/wp-content/uploads/2021/04/children-eating-in-cafeteria.jpg",
+        "alt": "Children Eating in Cafeteria"
       },
       {
         "id": 2,
         "date": "2024-07-15",
         "priority": 2,
-        "imageUrl": "https://novickcorp.com/wp-content/uploads/2021/04/children-eating-in-cafeteria.jpg",
-        "alt": "Children Eating in Cafeteria",
-        "isSoloPromo": true
+        "imageUrl": "https://novickcorp.com/wp-content/uploads/2021/02/Novick_Corp_Logo_Horiz_320x100.png",
+        "alt": "Novick Logo"
       },
       {
         "id": 3,
         "date": "2024-07-15",
         "priority": 3,
         "imageUrl": "https://novickcorp.com/wp-content/uploads/2021/04/truck-driver-in-front-of-delivery-trucks.jpg",
-        "alt": "Truck Drive in Front of Delivery Trucks",
-        "isSoloPromo": false
+        "alt": "Truck Drive in Front of Delivery Trucks"
       }
     ]
   },

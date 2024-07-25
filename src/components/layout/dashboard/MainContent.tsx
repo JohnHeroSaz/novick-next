@@ -9,7 +9,7 @@ interface Props {
 }
 
 const MainContent = ({ data }: Props) => {
-  const soloPromoItem = data.news?.filter(item => item.isSoloPromo) || [];
+  
 
   return (
     <Box className={styles['main-content']}>
@@ -28,17 +28,17 @@ const MainContent = ({ data }: Props) => {
         <Button sx={{ display: "block" }}>{data.promoSpace?.promoButton}</Button>
       </Box>
       <Box>
-        {soloPromoItem.length === 1 ? (
+        {data.news.length === 1 ? (
           <Image
             priority={true}
-            alt={soloPromoItem[0].alt}
-            src={soloPromoItem[0].imageUrl}
+            alt={data.news[0].alt}
+            src={data.news[0].imageUrl}
             width={600}
             height={400}
             className={styles['main-img']}
           />
         ) : (
-          <News news={soloPromoItem} />
+          <News news={data.news} />
         )}
       </Box>
     </Box>
