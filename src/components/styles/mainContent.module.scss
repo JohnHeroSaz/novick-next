@@ -54,9 +54,10 @@
 .main-img {
   display: block;
   width: 100%;
-  height: 540px;
+  height: 510px;
   border-radius: 28px;
   object-fit: cover;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 430px) {

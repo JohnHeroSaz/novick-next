@@ -32,13 +32,12 @@ export interface NewsItem {
   priority: number;
   imageUrl: string;
   alt: string;
-  isSoloPromo?: boolean;
+  isSoloPromo: boolean;
 }
 
 export interface MainContent {
   promoSpace?: PromoSpace;
-  news?: NewsItem[];
-  soloNews?: NewsItem;
+  news: NewsItem[];
 }
 
 export interface FooterLink {
@@ -57,7 +56,7 @@ export interface Address{
 }
 export interface TermsAndPrivacy{
   text: string;
-  url: string;
+  url?: string;
 }
 
 export interface Footer {

@@ -34,35 +34,30 @@
       "promoButton": "Order Now",
       "promoUrl": "/"
     },
-    "soloNews": {
-      "id": 2,
-      "date": "2024-07-15",
-      "priority": 2,
-      "imageUrl": "https://novickcorp.com/wp-content/uploads/2021/04/children-eating-in-cafeteria.jpg",
-      "alt": "Children Eating in Cafeteria",
-      "isSoloPromo": true
-    },
     "news": [
       {
         "id": 1,
         "date": "2024-07-15",
         "priority": 1,
         "imageUrl": "https://novickcorp.com/wp-content/uploads/2021/02/Novick_Corp_Logo_Horiz_320x100.png",
-        "alt": "Novivk Logo"
+        "alt": "Novivk Logo",
+        "isSoloPromo": false
       },
       {
         "id": 2,
         "date": "2024-07-15",
         "priority": 2,
         "imageUrl": "https://novickcorp.com/wp-content/uploads/2021/04/children-eating-in-cafeteria.jpg",
-        "alt": "Children Eating in Cafeteria"
+        "alt": "Children Eating in Cafeteria",
+        "isSoloPromo": true
       },
       {
         "id": 3,
         "date": "2024-07-15",
         "priority": 3,
         "imageUrl": "https://novickcorp.com/wp-content/uploads/2021/04/truck-driver-in-front-of-delivery-trucks.jpg",
-        "alt": "Truck Drive in Front of Delivery Trucks"
+        "alt": "Truck Drive in Front of Delivery Trucks",
+        "isSoloPromo": false
       }
     ]
   },

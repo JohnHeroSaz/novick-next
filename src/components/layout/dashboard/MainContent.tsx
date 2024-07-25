@@ -8,12 +8,14 @@ interface Props {
   data: MainContentType;
 }
 
-const MainContent = ( {data}:Props ) => {
+const MainContent = ({ data }: Props) => {
+  const soloPromoItem = data.news?.filter(item => item.isSoloPromo) || [];
+
   return (
     <Box className={styles['main-content']}>
       <Box className={styles['promo-space']}>
         <Box className={styles['left-section']}>
-          <Box className={styles['promo-img-space']}/>
+          <Box className={styles['promo-img-space']} />
           <Box className={styles['promoDescription_position']}>
             <Box className={styles['promo-title']}>
               <h4>{data.promoSpace?.promoTitle}</h4>
@@ -23,23 +25,21 @@ const MainContent = ( {data}:Props ) => {
             </Box>
           </Box>
         </Box>
-        <Button sx={{display:"block"}}>{data.promoSpace?.promoButton}</Button>
+        <Button sx={{ display: "block" }}>{data.promoSpace?.promoButton}</Button>
       </Box>
       <Box>
-
-      {data.soloNews && data.soloNews.isSoloPromo ? (
-          <Image 
-            priority={true} 
-            alt={data.soloNews.alt} 
-            src={data.soloNews.imageUrl} 
-            width={600} 
-            height={400} 
-            className={styles['main-img']} 
+        {soloPromoItem.length === 1 ? (
+          <Image
+            priority={true}
+            alt={soloPromoItem[0].alt}
+            src={soloPromoItem[0].imageUrl}
+            width={600}
+            height={400}
+            className={styles['main-img']}
           />
         ) : (
-          <News news={data.news} />
+          <News news={soloPromoItem} />
         )}
-
       </Box>
     </Box>
   );
