@@ -1,18 +1,20 @@
 'use client'
 
-import { Box } from "@mui/material";
+import Header from "../dashboard/Header";
 
+interface LoginProps {
+  data: any;
+  isLogged: Boolean;
+  showLoginMenu: Boolean;
+}
 
-const Login = ({data}: any, showMobileMenu: any) => {
-
-//   if (!data) {
-//     return <div>Loading...</div>;
-//   }
+const Login = ({ data, isLogged, showLoginMenu }: LoginProps) => {
 
   return (
-    <Box>
+    <>
+      <Header data={data.header} showMobileMenu={false} isLogged={isLogged} showLoginMenu={showLoginMenu} ></Header>
       <p>You must be logged to continue...</p>
-    </Box>
+    </>
   );
 };
 

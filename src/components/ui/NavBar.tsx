@@ -17,15 +17,31 @@ import { Header as HeaderType } from '@/types/types';
 import styles from '@/components/styles/navbar.module.scss'
 import BackgroundLetterAvatars from './Avatar';
 
+//Login logic
+import { loginRequest } from '../../services/login/authConfig';
+import { useMsal } from '@azure/msal-react';
+
 const drawerWidth = 240;
 
 interface Props {
   data: HeaderType;
   showMobileMenu: Boolean;
+  showLoginMenu: Boolean;
+  isLogged: Boolean;
 }
 
 const NavBar = (props: Props) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const { instance } = useMsal();
+
+  const handleLoginRedirect = () => {
+    instance.loginRedirect(loginRequest).catch((error: any) => console.log(error));
+  };
+
+  const handleLogoutRedirect = () => {
+    instance.logoutRedirect().catch((error: any) => console.log(error));
+  };
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -68,13 +84,13 @@ const NavBar = (props: Props) => {
             >
               <MenuIcon sx={{ marginLeft: "13rem" }} className={styles.fixBtn} />
             </IconButton>
-            <Box sx={{ display: { xs: 'none', sm: 'flex' }, marginLeft:"2rem", justifyContent: 'space-around', alignItems:"end" }}>
+            <Box sx={{ display: { xs: 'none', sm: 'flex' }, marginLeft: "2rem", justifyContent: 'space-around', alignItems: "end" }}>
               {props.data.headerLinks.map((link, index) => (
                 <Box key={index} sx={{ textAlign: 'center' }}>
-                  <Box sx={{marginTop:1}}>
+                  <Box sx={{ marginTop: 1 }}>
                     <img src={link.icon} alt={link.text} style={{ display: 'block', margin: '0 auto' }} />
                   </Box>
-                  <Button sx={{ color: '#000', display: 'block', }}>   
+                  <Button sx={{ color: '#000', display: 'block', }}>
                     <Typography textTransform={'capitalize'}>{link.text}</Typography>
                   </Button>
                 </Box>
@@ -91,7 +107,18 @@ const NavBar = (props: Props) => {
               <Typography sx={{ color: "#000" }}>Sunshine Daycare</Typography>
             </Box>
           }
-
+          {
+            props.showLoginMenu &&
+            <Box className={styles['user-select']}>
+              <Button onClick={props.isLogged ? handleLogoutRedirect : handleLoginRedirect}>
+                {
+                  props.isLogged ?
+                    "Logout" :
+                    "Login"
+                }
+              </Button>
+            </Box>
+          }
         </Toolbar>
       </AppBar>
       <nav>

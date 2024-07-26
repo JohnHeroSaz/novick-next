@@ -3,12 +3,14 @@ import NavBar from '../../ui/NavBar';
 
 interface HeaderProps {
   data: HeaderType;
-  showMobileMenu: boolean;
+  showMobileMenu: Boolean;
+  showLoginMenu: Boolean;
+  isLogged: Boolean;
 }
 
-const Header = ({ data, showMobileMenu }:HeaderProps) => {
+const Header = ({ data, showMobileMenu, isLogged , showLoginMenu}: HeaderProps) => {
   return (
-      <NavBar data={data} showMobileMenu={showMobileMenu} />
+      <NavBar data={data} showMobileMenu={showMobileMenu} isLogged={isLogged} showLoginMenu={showLoginMenu}/>
   );
 };
 
