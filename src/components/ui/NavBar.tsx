@@ -16,10 +16,13 @@ import Button from '@mui/material/Button';
 import { Header as HeaderType } from '@/types/types';
 import styles from '@/components/styles/navbar.module.scss'
 import BackgroundLetterAvatars from './Avatar';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 //Login logic
 import { loginRequest } from '../../services/login/authConfig';
 import { useMsal } from '@azure/msal-react';
+import LoginMenu from '../layout/login/components/LoginMenu';
+import ProfileContext from '@/context/ProfileContext';
 
 const drawerWidth = 240;
 
@@ -32,8 +35,18 @@ interface Props {
 
 const NavBar = (props: Props) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
   const { instance } = useMsal();
+  const { graphData } = React.useContext(ProfileContext);
+
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const handleLoginRedirect = () => {
     instance.loginRedirect(loginRequest).catch((error: any) => console.log(error));
@@ -69,7 +82,7 @@ const NavBar = (props: Props) => {
       <CssBaseline />
       <AppBar component="nav" sx={{ backgroundColor: 'ghostwhite' }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Box className={styles['left-section']}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Box className={styles.logo}>
               <a href={props.data.logoHomeLink}>
                 <img src={props.data.logoImage} alt="Logo" />
@@ -78,47 +91,46 @@ const NavBar = (props: Props) => {
             <IconButton
               color="inherit"
               aria-label="open drawer"
-              edge="end"
+              edge="start"
               onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: 'none' } }}
+              sx={{ display: { sm: 'none' }, ml: 2 }}
             >
-              <MenuIcon sx={{ marginLeft: "13rem" }} className={styles.fixBtn} />
+              <MenuIcon />
             </IconButton>
-            <Box sx={{ display: { xs: 'none', sm: 'flex' }, marginLeft: "2rem", justifyContent: 'space-around', alignItems: "end" }}>
-              {props.data.headerLinks.map((link, index) => (
-                <Box key={index} sx={{ textAlign: 'center' }}>
-                  <Box sx={{ marginTop: 1 }}>
-                    <img src={link.icon} alt={link.text} style={{ display: 'block', margin: '0 auto' }} />
+            {props.isLogged && (
+              <Box className={styles['menu-icons']} sx={{ display: { xs: 'none', sm: 'flex' } }}>
+                {props.data.headerLinks.map((link, index) => (
+                  <Box key={index} sx={{ textAlign: 'center', mx: 1 }}>
+                    <Button >
+                      <a href={link.url}>
+                        <img src={link.icon} alt={link.text} style={{ display: 'block', margin: '0 auto' }} />
+                      </a>
+                    </Button>
+                    <Typography sx={{ color: '#000' }} textTransform="capitalize">{link.text}</Typography>
                   </Box>
-                  <Button sx={{ color: '#000', display: 'block', }}>
-                    <Typography textTransform={'capitalize'}>{link.text}</Typography>
-                  </Button>
-                </Box>
-              ))}
-            </Box>
-
+                ))}
+              </Box>
+            )}
           </Box>
-          {props.showMobileMenu &&
-            <Box className={styles['user-select']}>
-              {/* <select>
-                <option>Sunshine Daycare</option>
-              </select> */}
-              <BackgroundLetterAvatars />
-              <Typography sx={{ color: "#000" }}>Sunshine Daycare</Typography>
-            </Box>
-          }
-          {
-            props.showLoginMenu &&
-            <Box className={styles['user-select']}>
-              <Button onClick={props.isLogged ? handleLogoutRedirect : handleLoginRedirect}>
-                {
-                  props.isLogged ?
-                    "Logout" :
-                    "Login"
-                }
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            {!props.isLogged ? (
+              <Button onClick={handleLoginRedirect}>
+                <p>Login</p>
               </Button>
-            </Box>
-          }
+            ) :
+              (
+                graphData &&
+                <LoginMenu children={
+                  <Box className={styles['user-select']}>
+                    <BackgroundLetterAvatars />
+                    <Typography textTransform="capitalize" sx={{ color: '#000', ml: 1 }}>{`${graphData.displayName} ${graphData.surname}`}</Typography>
+                    <ExpandMoreIcon sx={{ color: "black" }} />
+                  </Box>
+                } handleLogoutRedirect={handleLogoutRedirect}
+                />
+              )
+            }
+          </Box>
         </Toolbar>
       </AppBar>
       <nav>

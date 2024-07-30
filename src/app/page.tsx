@@ -4,7 +4,8 @@ import useAppLogic from '@/hooks/useAppLogic';
 import Login from '@/components/layout/login/Login';
 
 import { instance } from '../services/login/loginService'
-import { MsalProvider, AuthenticatedTemplate, UnauthenticatedTemplate } from '@azure/msal-react';
+import { MsalProvider } from '@azure/msal-react';
+import ProfileProvider from '@/providers/profileProvider';
 
 const App = () => {
   const { data, showMobileMenu } = useAppLogic();
@@ -15,12 +16,9 @@ const App = () => {
 
   return (
     <MsalProvider instance={instance}>
-      <AuthenticatedTemplate>
-        <Dashboard data={data} showMobileMenu={showMobileMenu} isLogged={true} showLoginMenu={true}/>
-      </AuthenticatedTemplate>
-      <UnauthenticatedTemplate>
-        <Login data={data} isLogged={false} showLoginMenu={true}/>
-      </UnauthenticatedTemplate>
+      <ProfileProvider instance={instance}>
+          <Dashboard data={data} showMobileMenu={showMobileMenu} showLoginMenu={true} />
+      </ProfileProvider>
     </MsalProvider>
   );
 };

@@ -1,17 +1,17 @@
 'use client'
+import React from 'react';
 import Header from './Header';
 import MainContent from './MainContent';
 import Footer from './Footer';
-
-
+import ProfileContext from '@/context/ProfileContext';
 interface DashboardProps{
   data: any,
   showMobileMenu: Boolean,
   showLoginMenu: Boolean,
-  isLogged: Boolean
 }
 
-const Dashboard = ({data, showMobileMenu, isLogged, showLoginMenu} : DashboardProps) => {
+const Dashboard = ({data, showMobileMenu, showLoginMenu} : DashboardProps) => {
+  const { isLogged } = React.useContext(ProfileContext);
 
   if (!data) {
     return <div>Loading...</div>;

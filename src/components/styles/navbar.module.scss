@@ -34,9 +34,8 @@
   
   .user-select {
     display: flex;
-    justify-content: end;
     align-items: center;
-    gap: 10px;
+    margin-right: 2rem;
   }
   
   .mobile-nav {
@@ -45,4 +44,10 @@
 
   .menu-button {
     text-align: right;
+  }
+
+  .menu-icons{
+    display: flex;
+    margin: 0.5rem 0 1rem 1rem;
+    align-items: end;
   }

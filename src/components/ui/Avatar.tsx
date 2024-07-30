@@ -1,5 +1,9 @@
+'use client'
+import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
+import { useEffect, useState } from 'react';
+import ProfileContext from '@/context/ProfileContext';
 
 function stringToColor(string: string) {
   let hash = 0;
@@ -31,10 +35,13 @@ function stringAvatar(name: string) {
 }
 
  const BackgroundLetterAvatars = () => {
+  const {graphData} = React.useContext(ProfileContext);
+  const {displayName, surname}= graphData;
+
   return (
-    <Stack direction="row" spacing={2}>
-      <Avatar {...stringAvatar('Sunshine Daycare')} />
-    </Stack>
+      <Stack direction="row" spacing={2}>
+        <Avatar {...stringAvatar(`${displayName} ${surname}`)} />
+      </Stack>
   );
 }
 

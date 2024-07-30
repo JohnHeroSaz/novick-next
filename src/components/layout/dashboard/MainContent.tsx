@@ -9,7 +9,7 @@ interface Props {
 }
 
 const MainContent = ({ data }: Props) => {
-  
+
 
   return (
     <Box className={styles['main-content']}>
@@ -24,9 +24,10 @@ const MainContent = ({ data }: Props) => {
               <p>{data.promoSpace?.promoDescription}</p>
             </Box>
           </Box>
+          <Button className={styles['promo-button']}>{data.promoSpace?.promoButton}</Button>
         </Box>
-        <Button sx={{ display: "block" }}>{data.promoSpace?.promoButton}</Button>
       </Box>
+
       <Box>
         {data.news.length === 1 ? (
           <Image
@@ -46,3 +47,5 @@ const MainContent = ({ data }: Props) => {
 };
 
 export default MainContent;
+
+

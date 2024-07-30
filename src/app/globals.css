@@ -152,3 +152,7 @@ button[class*="Mui"]:focus {
     height: 286px;
   }
 }
+
+.MuiButton-root:active {
+  background-color: #2fafb9 !important;
+}
